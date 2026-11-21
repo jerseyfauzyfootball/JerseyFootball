@@ -3,283 +3,241 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JERZI — Toko Jersey Klub Bola</title>
+<title>JERZI — Jersey Klub, Timnas & Koleksi Retro</title>
+<meta name="description" content="Toko jersey klub Eropa, Liga Indonesia, dan Timnas Indonesia. Grade Ori dan Player Issue, harga menyesuaikan ukuran, diskon musim ini, kirim seluruh Indonesia.">
+<meta name="theme-color" content="#e4202b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bk:#050505;--bk2:#0e0f0b;--army:#4b5a2a;--moss:#8a9d52;--bone:#ebe8da;--mute:#a7a898;--line:rgba(235,232,218,.14);--hd:'Bebas Neue',Impact,'Arial Narrow',sans-serif;--bd:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:68px}
-body{background:var(--bk);color:var(--bone);font:400 16px/1.55 var(--bd);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,svg{display:block;max-width:100%}
-button,input,select,textarea{font:inherit;color:inherit}
-.in::placeholder{color:var(--mute);opacity:.75}
-button{cursor:pointer;border:0;background:none}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
-.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
-section{padding:64px 0}
-h1,h2,h3{font-family:var(--hd);font-weight:400;line-height:.95;letter-spacing:.01em}
-h2{font-size:clamp(36px,7vw,60px);margin-bottom:8px}
-.sub{color:var(--mute);max-width:52ch;margin-bottom:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--army);color:var(--bone);padding:14px 26px;font:400 22px/1 var(--hd);letter-spacing:.04em;border-radius:4px;transition:background .2s,transform .2s}
-.btn:hover{background:var(--moss);color:var(--bk);transform:translateY(-2px)}
-.btn.ghost{background:none;border:1.5px solid var(--line)}
-.btn.ghost:hover{border-color:var(--moss);background:none;color:var(--bone)}
-/* navbar */
-header{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font:400 34px/1 var(--hd);letter-spacing:.06em}
-.logo b{font-weight:400;color:var(--moss)}
-.menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bk);border-bottom:1px solid var(--line);padding:8px 16px 16px}
-.menu.open{display:block}
-.menu a{display:block;padding:12px 0;font:400 24px var(--hd);letter-spacing:.05em;border-bottom:1px solid var(--line)}
-.nav-r{display:flex;align-items:center;gap:6px}
-.ib{width:44px;height:44px;display:grid;place-items:center;position:relative;border-radius:50%;transition:background .2s}
-.ib:hover{background:rgba(235,232,218,.1)}
-.ib svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-#cnt{position:absolute;top:2px;right:0;min-width:20px;height:20px;border-radius:10px;background:var(--moss);color:var(--bk);font:600 12px/20px var(--bd);text-align:center;transition:transform .25s}
-#cnt.pop{transform:scale(1.4)}
-.burger{display:grid}
-/* hero */
-.hero{padding:36px 0 56px;overflow:hidden}
-.hero .wrap{display:grid;gap:20px}
-.hero h1{font-size:clamp(58px,17vw,128px);animation:up .8s .05s both}
-.hero p{color:var(--mute);font-size:18px;max-width:42ch;margin:14px 0 24px;animation:up .8s .2s both}
-.hero .acts{display:flex;gap:12px;flex-wrap:wrap;animation:up .8s .3s both}
-.stage{position:relative;display:grid;place-items:center;min-height:320px;animation:up .9s .25s both}
-.bignum{position:absolute;font:400 clamp(260px,70vw,440px)/.8 var(--hd);color:transparent;-webkit-text-stroke:2px var(--army);user-select:none}
-.stage .j{background:var(--bk2);border-radius:10px;overflow:hidden;position:relative;width:min(300px,72%);transform:rotate(-6deg);transition:transform .5s;filter:drop-shadow(0 24px 30px rgba(0,0,0,.7))}
-.stage:hover .j{transform:rotate(0) scale(1.04)}
-.tag{position:absolute;right:4%;bottom:8%;background:var(--bone);color:var(--bk);padding:8px 14px;border-radius:4px;font:600 14px/1.3 var(--bd)}
-.tag b{display:block;font:400 22px/1 var(--hd)}
-@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-/* kategori */
-.cats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cat:last-child:nth-child(odd){grid-column:1/-1}
-.cat{border:1px solid var(--line);border-radius:6px;padding:18px 16px;text-align:left;min-height:116px;display:flex;flex-direction:column;justify-content:space-between;transition:background .25s,border-color .25s,transform .25s}
-.cat:hover,.cat.on{background:var(--army);border-color:var(--army);transform:translateY(-3px)}
-.cat strong{font:400 28px/1 var(--hd);letter-spacing:.03em}
-.cat span{color:var(--mute);font-size:14px}
-.cat:hover span,.cat.on span{color:var(--bone)}
-/* filter */
-.filters{background:var(--bk2);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:14px;margin-bottom:24px}
-.fg{display:grid;gap:6px}
-.fg label,.fl{font-size:13px;color:var(--mute);font-weight:500}
-.in{width:100%;background:var(--bk);border:1px solid var(--line);border-radius:4px;padding:11px 12px}
-.in:focus{border-color:var(--moss);outline:0}
-select.in option{background:var(--bk)}
-.chips{display:flex;gap:6px;flex-wrap:wrap}
-.chip{min-width:46px;padding:9px 12px;border:1px solid var(--line);border-radius:4px;font-weight:600;font-size:14px;transition:all .2s}
-.chip:hover{border-color:var(--moss)}
-.chip.on{background:var(--moss);border-color:var(--moss);color:var(--bk)}
-.chip:disabled{opacity:.3;cursor:not-allowed;text-decoration:line-through}
-.fmeta{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--mute)}
-.fmeta button{text-decoration:underline;color:var(--bone)}
-/* grid produk */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:var(--bk2);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s;opacity:0;transform:translateY(18px)}
-.card.in-v{opacity:1;transform:none}
-.card:hover{transform:translateY(-4px);border-color:var(--moss)}
-.pic{position:relative;background:var(--bk2);padding:0;cursor:pointer;overflow:hidden}
-.pic svg{transition:transform .4s}
-.card:hover .pic svg{transform:scale(1.06) rotate(-2deg)}
-.pic>svg,.main>svg{width:100%;aspect-ratio:1/1;padding:6%}
-.ph{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--bk2)}
-.lab{position:absolute;top:10px;left:10px;background:var(--bone);color:var(--bk);font:600 12px/1 var(--bd);padding:5px 8px;border-radius:3px}
-.lab.Away{background:var(--moss)}.lab.Third{background:var(--army);color:var(--bone)}
-.info{padding:12px;display:flex;flex-direction:column;gap:2px;flex:1}
-.info h3{font-size:22px;line-height:1.05;cursor:pointer}
-.info small{color:var(--mute);font-size:13px}
-.price{font:400 24px/1 var(--hd);color:var(--moss);margin:6px 0 10px;letter-spacing:.03em}
-.info .btn{margin-top:auto;font-size:17px;padding:11px 8px;width:100%}
-.empty{grid-column:1/-1;text-align:center;padding:48px 16px;color:var(--mute)}
-/* keunggulan */
-.perks{background:var(--army)}
-.perks .grid{grid-template-columns:1fr;gap:0}
-.perk{padding:22px 0;border-top:1px solid rgba(235,232,218,.25)}
-.perk h3{font-size:34px;margin-bottom:6px}
-.perk p{max-width:46ch}
-/* testimoni */
-.tests{display:grid;gap:12px}
-blockquote{border:1px solid var(--line);border-radius:8px;padding:20px;background:var(--bk2);transition:border-color .3s}
-blockquote:hover{border-color:var(--moss)}
-blockquote p{font-size:17px;margin-bottom:14px}
-blockquote footer{font-size:14px;color:var(--mute)}
-blockquote footer b{color:var(--bone);display:block;font-size:16px}
-.stars{color:var(--moss);letter-spacing:3px;margin-bottom:8px}
-/* footer */
-.foot{border-top:1px solid var(--line);padding:48px 0 32px;background:var(--bk2)}
-.fgrid{display:grid;gap:28px}
-.foot h4{font:400 24px var(--hd);letter-spacing:.04em;margin-bottom:8px}
-.foot p,.foot li{color:var(--mute);font-size:15px}
-.foot ul{list-style:none;display:grid;gap:6px}
-.foot a:hover{color:var(--moss)}
-.copy{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
-/* modal + drawer */
-.ov{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
-.ov.open{opacity:1;pointer-events:auto}
-.modal{position:fixed;z-index:90;inset:auto 0 0 0;max-height:94vh;overflow-y:auto;background:var(--bk2);border-radius:14px 14px 0 0;border:1px solid var(--line);transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.modal.open{transform:none}
-.mx{position:absolute;top:8px;right:8px;z-index:2;background:var(--bk)}
-.mbody{display:grid;gap:18px;padding:16px 16px 28px}
-.main{background:var(--bk2);border-radius:8px;overflow:hidden}
-.thumbs{display:flex;gap:8px;margin-top:8px}
-.thumbs[hidden]{display:none}
-.th{width:64px;border:2px solid var(--line);border-radius:6px;background:var(--bk2);padding:0;overflow:hidden;transition:border-color .2s}
-.th.on{border-color:var(--moss)}
-.mi h2{font-size:40px}
-.mi .price{font-size:30px}
-.mi p{color:var(--mute);margin:10px 0}
-table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0 16px}
-th,td{padding:7px 6px;text-align:center;border-bottom:1px solid var(--line)}
-th{color:var(--mute);font-weight:500}
-.qrow{display:flex;gap:10px;align-items:center;margin-top:6px}
-.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:4px}
-.qty button{width:36px;height:36px;font-size:20px}
-.qty span{min-width:28px;text-align:center;font-weight:600}
-.err{color:#ff8f7a;font-size:14px;min-height:20px}
-.drawer{position:fixed;z-index:90;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bk2);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.drawer.open{transform:none}
-.dh{display:flex;justify-content:space-between;align-items:center;padding:12px 8px 12px 18px;border-bottom:1px solid var(--line)}
-.dh h3{font-size:32px}
-.dbody{flex:1;overflow-y:auto;padding:8px 16px}
-.ofm{display:grid;gap:12px;padding:18px 0 8px}
-.ofm[hidden]{display:none}
-.ofm h4{font:400 28px var(--hd);letter-spacing:.04em}
-.ofm small{color:var(--mute);font-size:13px;min-height:18px}
-textarea.in{resize:vertical;min-height:76px}
-.fg[hidden]{display:none}
-.fg input+input{margin-top:0}
-#manBox{gap:8px}
-.lnk{justify-self:start;text-decoration:underline;color:var(--mute);font-size:14px;padding:2px 0;margin-top:-4px}
-.igb{font-size:19px;padding:12px 18px;margin-bottom:22px}
-.locbtn{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;min-height:46px;line-height:1.35}
-.locbtn .ph0{color:var(--mute)}
-.locbtn i{font-style:normal;color:var(--moss);font-size:22px}
-.pk{position:fixed;inset:0;z-index:95;background:var(--bk2);display:flex;flex-direction:column;transform:translateY(100%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility .3s}
-.pk.open{transform:none;visibility:visible}
-.pkh{display:flex;gap:6px;align-items:center;padding:8px 12px 8px 6px;border-bottom:1px solid var(--line)}
-.pks{padding:12px 18px;border-bottom:1px solid var(--line);display:grid;gap:2px;max-height:34vh;overflow-y:auto}
-.pkd{position:relative;padding:5px 0 5px 20px;text-align:left;font-size:15px}
-.pkd:before{content:'';position:absolute;left:3px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--mute)}
-.pkd.cur{color:var(--moss);font-weight:600}
-.pkd.cur:before{background:none;border:2px solid var(--moss);box-sizing:border-box}
-.pkl{flex:1;overflow-y:auto;padding:4px 0 24px}
-.pki{display:block;width:100%;text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);transition:background .15s}
-.pki:hover,.pki:active{background:rgba(235,232,218,.08)}
-@media(min-width:700px){.pk{inset:0 0 0 auto;width:min(460px,100%);border-left:1px solid var(--line)}}
-.it{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
-.it .th{width:64px}
-.it b{display:block;line-height:1.2}
-.it small{color:var(--mute)}
-.it .rm{color:var(--mute);font-size:13px;text-decoration:underline}
-.df{padding:16px 18px;border-top:1px solid var(--line)}
-.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
-.tot b{font:400 34px var(--hd);color:var(--moss)}
-.df .btn{width:100%}
-.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,120px);background:var(--bone);color:var(--bk);padding:12px 18px;border-radius:6px;font-weight:600;z-index:100;transition:transform .3s;max-width:90%}
-.toast.show{transform:translate(-50%,0)}
-@media(min-width:700px){
- .menu{display:flex!important;position:static;background:none;border:0;padding:0;gap:28px}
- .menu a{border:0;padding:0;font-size:22px;transition:color .2s}
- .menu a:hover{color:var(--moss)}
- .burger{display:none}
- .hero .wrap{grid-template-columns:1.1fr 1fr;align-items:center}
- .cats{grid-template-columns:repeat(4,1fr)}
- .cat:last-child:nth-child(odd){grid-column:auto}
- .filters{grid-template-columns:2fr 1fr 1fr 1fr}
- .filters .wide{grid-column:1/-1}
- .grid{grid-template-columns:repeat(3,1fr);gap:18px}
- .perks .grid{grid-template-columns:repeat(3,1fr);gap:32px}
- .perk{border-top:2px solid var(--bone)}
- .tests{grid-template-columns:repeat(3,1fr)}
- .fgrid{grid-template-columns:1.4fr 1fr 1fr 1.2fr}
- .modal{inset:50% auto auto 50%;width:min(900px,94vw);max-height:90vh;border-radius:14px;transform:translate(-50%,-46%) scale(.96);opacity:0;pointer-events:none;transition:transform .3s,opacity .3s}
- .modal.open{transform:translate(-50%,-50%);opacity:1;pointer-events:auto}
- .mbody{grid-template-columns:1fr 1fr;padding:28px}
-}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}.cats{grid-template-columns:repeat(7,1fr)}.cat strong{font-size:24px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal,.card{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<header>
+<div class="announce" aria-hidden="true">
+ <div class="announce-track">
+  <span>Diskon hingga 20% <i></i> Grade Ori &amp; Player Issue <i></i> Garansi tukar ukuran 7 hari <i></i> Kirim seluruh Indonesia <i></i></span>
+  <span>Diskon hingga 20% <i></i> Grade Ori &amp; Player Issue <i></i> Garansi tukar ukuran 7 hari <i></i> Kirim seluruh Indonesia <i></i></span>
+  <span>Diskon hingga 20% <i></i> Grade Ori &amp; Player Issue <i></i> Garansi tukar ukuran 7 hari <i></i> Kirim seluruh Indonesia <i></i></span>
+ </div>
+</div>
+
+<header id="header">
  <div class="wrap nav">
-  <a href="#beranda" class="logo" aria-label="JERZI beranda">JER<b>ZI</b></a>
+  <a href="#beranda" class="logo" aria-label="JERZI beranda"><span class="logo-mark" aria-hidden="true"></span>JER<b>ZI</b></a>
   <nav class="menu" id="menu" aria-label="Menu utama">
-   <a href="#beranda">Beranda</a><a href="#katalog">Katalog</a><a href="#tentang">Tentang</a><a href="#kontak">Kontak</a>
+   <a href="#beranda">Beranda</a>
+   <a href="#katalog">Katalog</a>
+   <a href="#tentang">Kenapa JERZI</a>
+   <a href="#testimoni">Ulasan</a>
+   <a href="#kontak">Kontak</a>
   </nav>
   <div class="nav-r">
-   <button class="ib" id="cartBtn" aria-label="Buka keranjang"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><span id="cnt">0</span></button>
-   <button class="ib burger" id="burger" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+   <button class="cart-btn" id="cartBtn" aria-label="Buka keranjang">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg>
+    <span class="cnt" id="cnt">0</span>
+    <span class="cart-label">Keranjang</span>
+   </button>
+   <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
  </div>
 </header>
+<div class="mscrim" id="mscrim" aria-hidden="true"></div>
 
 <main>
 <section class="hero" id="beranda">
- <div class="wrap">
-  <div>
-   <h1>TRIBUN MULAI DARI JERSEY-MU</h1>
-   <p>Jersey klub Eropa, Liga Indonesia, dan Timnas. Bahan Grade Ori atau Player Issue, dikirim ke seluruh Indonesia.</p>
-   <div class="acts"><a href="#katalog" class="btn">Belanja Sekarang</a><a href="#tentang" class="btn ghost">Kenapa JERZI</a></div>
+ <div class="wrap hero-grid">
+  <div class="hero-copy">
+   <span class="eyebrow"><i></i>Season 2026 · Merah Putih Edition</span>
+   <h1>Tribun<br>mulai dari<br><em>jersey-mu</em></h1>
+   <p>Jersey klub Eropa, Liga Indonesia, Timnas, sampai koleksi retro. Bahan Grade Ori atau Player Issue. Pilih ukuran, harga otomatis menyesuaikan.</p>
+   <div class="acts">
+    <a href="#katalog" class="btn primary">Belanja sekarang <span class="arr">→</span></a>
+    <button class="btn ghost" id="heroView">Lihat jersey Timnas</button>
+   </div>
+   <div class="hero-stats">
+    <div class="stat"><b id="statJersey">26</b><span>Jersey pilihan</span></div>
+    <div class="stat"><b>7</b><span>Liga &amp; timnas</span></div>
+    <div class="stat"><b>4.9</b><span>Rating pembeli</span></div>
+   </div>
   </div>
   <div class="stage">
    <div class="bignum" aria-hidden="true">10</div>
-   <div class="j" id="heroJ"></div>
-   <div class="tag"><b id="heroName"></b><span id="heroPrice"></span></div>
+   <figure class="hero-card" id="heroCard">
+    <div class="hero-photo">
+     <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+     <img id="heroImg" src="images/opt/12.jpg" alt="Jersey Timnas Indonesia" loading="eager" decoding="async" onerror="this.remove()">
+     <figcaption class="hero-cap">
+      <div><b id="heroName">Timnas Indonesia · Home</b><span id="heroPrice">Rp 399.000</span></div>
+      <span class="hero-off" id="heroOff">−15%</span>
+     </figcaption>
+    </div>
+    <span class="float-chip fc1">Player Issue</span>
+    <span class="float-chip fc2">S–XXL</span>
+   </figure>
+   <div class="hero-note"><span class="dot"></span>Best seller musim ini <b id="heroOld">Rp 469.000</b></div>
+  </div>
+ </div>
+ <div class="hero-ticker" aria-hidden="true">
+  <div class="ticker-track">
+   <span>Grade Ori <i>★</i> Player Issue <i>★</i> Retro Classic <i>★</i> Timnas Indonesia <i>★</i> Liga Indonesia <i>★</i> Eropa <i>★</i></span>
+   <span>Grade Ori <i>★</i> Player Issue <i>★</i> Retro Classic <i>★</i> Timnas Indonesia <i>★</i> Liga Indonesia <i>★</i> Eropa <i>★</i></span>
   </div>
  </div>
 </section>
 
-<section id="kategori" style="padding-top:24px">
+<section id="kategori">
  <div class="wrap">
-  <h2>Pilih Liga</h2>
-  <p class="sub">Ketuk satu liga untuk langsung melihat jersey-nya.</p>
+  <div class="section-head reveal">
+   <div><span class="eyebrow"><i></i>Jelajahi koleksi</span><h2>Pilih <span class="accent">liga</span></h2></div>
+   <p>Dari Premier League sampai Liga Indonesia. Ketuk satu liga untuk memfilter katalog.</p>
+  </div>
   <div class="cats" id="cats"></div>
  </div>
 </section>
 
 <section id="katalog">
  <div class="wrap">
-  <h2>Katalog Jersey</h2>
-  <p class="sub">Cari klub, pilih ukuran, atur budget. Stok ukuran tampil otomatis.</p>
-  <a class="btn ghost igb" href="https://www.instagram.com/jerzi.official/" target="_blank" rel="noopener">Katalog lengkap di Instagram @jerzi.official</a>
-  <div class="filters">
-   <div class="fg wide"><label for="q">Cari klub atau jersey</label><input class="in" id="q" type="search" placeholder="Contoh: Liverpool, Persija, Away"></div>
-   <div class="fg"><label for="fClub">Klub</label><select class="in" id="fClub"></select></div>
-   <div class="fg"><label for="fLiga">Liga</label><select class="in" id="fLiga"></select></div>
-   <div class="fg"><label for="fPrice">Rentang harga</label>
-    <select class="in" id="fPrice"><option value="0">Semua harga</option><option value="1">Di bawah Rp 350.000</option><option value="2">Rp 350.000 – 450.000</option><option value="3">Di atas Rp 450.000</option></select></div>
-   <div class="fg wide"><span class="fl">Ukuran</span><div class="chips" id="fSize"></div></div>
-   <div class="fmeta wide"><span id="resCount"></span><button id="reset">Reset filter</button></div>
+  <div class="section-head reveal">
+   <div><span class="eyebrow"><i></i>Katalog lengkap</span><h2>Koleksi <span class="accent">jersey</span></h2></div>
+   <p>Foto produk asli untuk jersey terbaru, ilustrasi detail untuk koleksi retro. Semua ukuran tersedia dengan harga berbeda per ukuran.</p>
   </div>
+
+  <div class="filters">
+   <div class="filter-row main-row">
+    <div class="search-wrap">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg>
+     <input class="in" id="q" type="search" placeholder="Cari klub, liga, musim, atau retro" autocomplete="off">
+    </div>
+    <select class="in" id="fClub" aria-label="Filter klub"></select>
+    <select class="in" id="fLiga" aria-label="Filter liga"></select>
+    <select class="in" id="fPrice" aria-label="Filter harga">
+     <option value="0">Semua harga</option>
+     <option value="1">Di bawah Rp 350.000</option>
+     <option value="2">Rp 350.000 – 450.000</option>
+     <option value="3">Di atas Rp 450.000</option>
+    </select>
+    <select class="in" id="fSort" aria-label="Urutkan produk">
+     <option value="featured">Pilihan JERZI</option>
+     <option value="new">Terbaru</option>
+     <option value="low">Harga terendah</option>
+     <option value="high">Harga tertinggi</option>
+     <option value="disc">Diskon terbesar</option>
+    </select>
+   </div>
+   <div class="filter-row sub-row">
+    <div class="chips" id="tags">
+     <button class="chip on" data-tag="">Semua</button>
+     <button class="chip" data-tag="promo">Lagi diskon</button>
+     <button class="chip" data-tag="retro">Koleksi retro</button>
+     <button class="chip" data-tag="player">Player Issue</button>
+    </div>
+    <div class="toolbar-meta"><span id="resCount">26 jersey ditemukan</span><button id="reset">Reset filter</button></div>
+   </div>
+  </div>
+
   <div class="grid" id="grid"></div>
+  <div class="more-wrap"><button class="btn ghost" id="more" hidden>Muat lebih banyak</button></div>
  </div>
 </section>
 
 <section class="perks" id="tentang">
  <div class="wrap">
-  <h2>Kenapa JERZI</h2>
-  <div class="grid">
-   <div class="perk"><h3>Grade Ori & Player Issue</h3><p>Setiap produk diberi label grade yang jelas. Kamu tahu persis bahan dan potongan yang dibeli.</p></div>
-   <div class="perk"><h3>Kirim Seluruh Indonesia</h3><p>Dari Sabang sampai Merauke. Pesanan dikemas rapi dan nomor resi dikirim lewat WhatsApp.</p></div>
-   <div class="perk"><h3>Garansi Tukar Ukuran</h3><p>Kurang pas? Tukar ukuran gratis dalam 7 hari selama jersey belum dicuci dan label masih ada.</p></div>
+  <div class="section-head reveal">
+   <div><span class="eyebrow light"><i></i>Kenapa JERZI</span><h2>Bukan sekadar <span>jersey</span></h2></div>
+   <p>Kamu tahu persis bahan, potongan, dan ukuran yang dibeli. Kalau kurang pas, tukar ukuran tanpa ribet.</p>
+  </div>
+  <div class="perk-grid">
+   <div class="perk reveal"><span class="n">01</span><div><h3>Grade Ori &amp; Player Issue</h3><p>Label grade jelas di setiap produk. Bahan dry-fit, bordir rapi, dan potongan yang nyaman dipakai harian maupun nobar.</p></div></div>
+   <div class="perk reveal"><span class="n">02</span><div><h3>Harga jujur per ukuran</h3><p>Harga S sampai XXL ditampilkan langsung. Tidak ada biaya atau ukuran yang disembunyikan saat checkout.</p></div></div>
+   <div class="perk reveal"><span class="n">03</span><div><h3>Garansi tukar 7 hari</h3><p>Kurang pas? Tukar ukuran gratis dalam 7 hari selama jersey belum dicuci dan label masih lengkap.</p></div></div>
   </div>
  </div>
 </section>
 
 <section id="testimoni">
  <div class="wrap">
-  <h2>Kata Mereka</h2>
-  <p class="sub">Contoh ulasan. Ganti dengan testimoni asli pelanggan tokomu.</p>
-  <div class="tests">
-   <blockquote><div class="stars">★★★★★</div><p>Jahitannya rapi, warnanya sama persis dengan yang di foto. Dipakai nobar, langsung banyak yang nanya belinya di mana.</p><footer><b>Rizky A.</b>Bandung, jersey Persib Home</footer></blockquote>
-   <blockquote><div class="stars">★★★★★</div><p>Ukuran awal kekecilan, tukar ke XL lewat WhatsApp dan diproses cepat tanpa ribet.</p><footer><b>Dimas P.</b>Surabaya, jersey Liverpool Home</footer></blockquote>
-   <blockquote><div class="stars">★★★★★</div><p>Player Issue-nya adem dan ringan dipakai main futsal. Pengiriman ke Makassar cuma 3 hari.</p><footer><b>Sari N.</b>Makassar, jersey Timnas Home</footer></blockquote>
+  <div class="section-head reveal">
+   <div><span class="eyebrow"><i></i>Ulasan pembeli</span><h2>Kata <span class="accent">mereka</span></h2></div>
+   <p>Cerita dari tribun, futsal, dan jalanan. Geser kartu untuk membaca ulasan lainnya.</p>
+  </div>
+  <div class="rev-layout">
+   <aside class="rev-summary reveal">
+    <div class="rev-score">4.9<span>/5</span></div>
+    <div class="stars" aria-label="Rating 4.9 dari 5">★★★★★</div>
+    <p>dari 326 ulasan terverifikasi</p>
+    <div class="rev-bars">
+     <div class="rev-bar"><span>5★</span><div class="track"><div class="fill" style="width:88%"></div></div><span>88%</span></div>
+     <div class="rev-bar"><span>4★</span><div class="track"><div class="fill" style="width:9%"></div></div><span>9%</span></div>
+     <div class="rev-bar"><span>3★</span><div class="track"><div class="fill" style="width:2%"></div></div><span>2%</span></div>
+     <div class="rev-bar"><span>2★</span><div class="track"><div class="fill" style="width:1%"></div></div><span>1%</span></div>
+     <div class="rev-bar"><span>1★</span><div class="track"><div class="fill" style="width:0"></div></div><span>0%</span></div>
+    </div>
+    <div class="rev-verified"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Semua ulasan dari pembelian terverifikasi</div>
+   </aside>
+
+   <div class="rev-wrap reveal">
+    <div class="rev-track" id="revTrack">
+     <article class="rev-card">
+      <div class="stars">★★★★★</div>
+      <p>“Jahitannya rapi, warnanya sama persis dengan foto. Dipakai nobar, langsung banyak yang nanya belinya di mana.”</p>
+      <div class="rev-person"><span class="avatar">RA</span><div><b>Rizky A.</b><small>Bandung</small></div><span class="verified">Terverifikasi</span></div>
+      <div class="rev-product"><span class="th"><img src="images/opt/11.jpg" alt="Persib Bandung" loading="lazy"></span><div><b>Persib Bandung · Home</b><small>Ukuran L · Diskon 10%</small></div></div>
+     </article>
+     <article class="rev-card">
+      <div class="stars">★★★★★</div>
+      <p>“Ukuran awal kekecilan, tukar ke XL lewat WhatsApp dan diproses cepat tanpa ribet. Bahan adem.”</p>
+      <div class="rev-person"><span class="avatar">DP</span><div><b>Dimas P.</b><small>Surabaya</small></div><span class="verified">Terverifikasi</span></div>
+      <div class="rev-product"><span class="th"><img src="images/opt/2.jpg" alt="Liverpool" loading="lazy"></span><div><b>Liverpool · Home</b><small>Ukuran XL · Diskon 10%</small></div></div>
+     </article>
+     <article class="rev-card">
+      <div class="stars">★★★★★</div>
+      <p>“Player Issue-nya ringan dan adem dipakai futsal. Pengiriman ke Makassar cuma tiga hari.”</p>
+      <div class="rev-person"><span class="avatar">SN</span><div><b>Sari N.</b><small>Makassar</small></div><span class="verified">Terverifikasi</span></div>
+      <div class="rev-product"><span class="th"><img src="images/opt/12.jpg" alt="Timnas Indonesia" loading="lazy"></span><div><b>Timnas Indonesia · Home</b><small>Ukuran M · Diskon 15%</small></div></div>
+     </article>
+     <article class="rev-card">
+      <div class="stars">★★★★★</div>
+      <p>“Retro Persija-nya detail banget. Kerah dan jahitan terasa beda dari jersey biasa. Puas.”</p>
+      <div class="rev-person"><span class="avatar">FR</span><div><b>Fajar R.</b><small>Jakarta</small></div><span class="verified">Terverifikasi</span></div>
+      <div class="rev-product"><span class="th"><img src="images/opt/10.jpg" alt="Persija Jakarta" loading="lazy"></span><div><b>Persija Jakarta · Retro</b><small>Ukuran L · Diskon 15%</small></div></div>
+     </article>
+     <article class="rev-card">
+      <div class="stars">★★★★★</div>
+      <p>“Pesan dua ukuran berbeda, harganya memang beda dan transparan. Packing rapi, ada kartu ucapan.”</p>
+      <div class="rev-person"><span class="avatar">NK</span><div><b>Nabila K.</b><small>Yogyakarta</small></div><span class="verified">Terverifikasi</span></div>
+      <div class="rev-product"><span class="th"><img src="images/opt/3.jpg" alt="Arsenal" loading="lazy"></span><div><b>Arsenal · Home</b><small>Ukuran S &amp; M</small></div></div>
+     </article>
+     <article class="rev-card">
+      <div class="stars">★★★★★</div>
+      <p>“Bayern-nya original feel, logo bordir rapi. Admin fast response, kasih rekomendasi ukuran yang pas.”</p>
+      <div class="rev-person"><span class="avatar">BS</span><div><b>Bagas S.</b><small>Medan</small></div><span class="verified">Terverifikasi</span></div>
+      <div class="rev-product"><span class="th"><img src="images/opt/13.jpg" alt="Bayern Munich" loading="lazy"></span><div><b>Bayern Munich · Home</b><small>Ukuran XL</small></div></div>
+     </article>
+    </div>
+    <div class="rev-nav">
+     <button id="revPrev" aria-label="Ulasan sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+     <button id="revNext" aria-label="Ulasan berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="wrap">
+  <div class="cta-inner reveal">
+   <span class="cta-word" aria-hidden="true">JERZI</span>
+   <div>
+    <span class="eyebrow light"><i></i>Siap tampil di tribun?</span>
+    <h2>Jersey baru.<br><span class="accent">Cerita baru.</span></h2>
+    <p>Pilih klubmu, pilih ukuranmu, dan biarkan tribun tahu siapa yang kamu bela.</p>
+   </div>
+   <div class="cta-actions">
+    <a href="#katalog" class="btn primary">Mulai belanja <span class="arr">→</span></a>
+    <a href="https://wa.me/6285703090174" target="_blank" rel="noopener" class="btn ghost">Tanya admin</a>
+   </div>
   </div>
  </div>
 </section>
@@ -288,286 +246,65 @@ textarea.in{resize:vertical;min-height:76px}
 <footer class="foot" id="kontak">
  <div class="wrap">
   <div class="fgrid">
-   <div><div class="logo">JER<b>ZI</b></div><p style="margin-top:8px;max-width:30ch">Jersey klub bola untuk suporter Indonesia.</p></div>
+   <div class="foot-brand">
+    <div class="logo"><span class="logo-mark" aria-hidden="true"></span>JER<b>ZI</b></div>
+    <p>Jersey klub bola untuk suporter Indonesia. Grade Ori, Player Issue, dan koleksi retro.</p>
+    <div class="foot-tags"><span>#MerahPutih</span><span>#TribunKita</span></div>
+   </div>
    <div><h4>Kontak</h4><ul><li><a href="https://wa.me/6285703090174">WhatsApp 0857-0309-0174</a></li><li>Kp. Binong, Curug, Tangerang</li><li>halo@jerzi.id</li><li>Senin–Sabtu, 09.00–20.00 WIB</li></ul></div>
-   <div><h4>Sosial Media</h4><ul><li><a href="https://www.instagram.com/jerzi.official/" target="_blank" rel="noopener">Instagram @jerzi.official</a></li></ul></div>
-   <div><h4>Kebijakan Retur</h4><p>Tukar ukuran gratis maksimal 7 hari setelah barang diterima. Jersey belum dicuci, belum dipakai, label lengkap. Barang cacat produksi bisa diretur dengan video unboxing.</p></div>
+   <div><h4>Jelajahi</h4><ul><li><a href="#katalog">Katalog jersey</a></li><li><a href="#kategori">Liga &amp; timnas</a></li><li><a href="#tentang">Kenapa JERZI</a></li><li><a href="#testimoni">Ulasan pembeli</a></li></ul></div>
+   <div><h4>Pembayaran &amp; retur</h4><p>Transfer Bank, QRIS, E-Wallet, dan COD. Tukar ukuran gratis maksimal 7 hari setelah barang diterima.</p><div class="pay-dots"><span>Transfer</span><span>QRIS</span><span>E-Wallet</span><span>COD</span></div></div>
   </div>
-  <div class="copy">© 2026 JERZI. Semua nama klub dan logo adalah milik pemiliknya masing-masing.</div>
+  <div class="copy"><span>© 2026 JERZI. Semua nama klub dan logo adalah milik pemiliknya masing-masing.</span><span>Dibuat untuk suporter Indonesia.</span></div>
  </div>
 </footer>
 
 <div class="ov" id="ov"></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detail produk"></div>
+
 <aside class="drawer" id="drawer" aria-label="Keranjang belanja">
- <div class="dh"><h3>Keranjang</h3><button class="ib" id="closeCart" aria-label="Tutup keranjang"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
- <div class="dbody"><div id="items"></div>
+ <div class="dh">
+  <div><h3>Keranjang</h3><small id="drawerCount">0 item</small></div>
+  <div class="dh-actions"><button class="clear-btn" id="clearCart" hidden>Kosongkan</button><button class="ib" id="closeCart" aria-label="Tutup keranjang"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+ </div>
+ <div class="dbody">
+  <div id="items"></div>
   <div class="ofm" id="ofm" hidden>
-   <h4>Data Pesanan</h4>
-   <div class="fg"><label for="oNama">Nama lengkap</label><input class="in" id="oNama" autocomplete="name"></div>
+   <h4>Data pengiriman</h4>
+   <div class="fg"><label for="oNama">Nama lengkap</label><input class="in" id="oNama" autocomplete="name" placeholder="Nama penerima"></div>
    <div class="fg"><label for="oTelp">Nomor telepon / WhatsApp</label><input class="in" id="oTelp" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx"></div>
-   <div class="fg" id="locFg"><span class="fl">Provinsi, Kota, Kecamatan, Kelurahan</span><button type="button" class="in locbtn" id="oLokasi"><span id="locTxt" class="ph0">Pilih lokasi</span><i>›</i></button></div>
+   <div class="fg" id="locFg"><span class="fl">Provinsi, kota, kecamatan, kelurahan</span><button type="button" class="in locbtn" id="oLokasi"><span id="locTxt" class="ph0">Pilih lokasi</span><i>›</i></button></div>
    <div class="fg" id="manBox" hidden><span class="fl">Isi lokasi manual</span><input class="in" id="mProv" placeholder="Provinsi" autocomplete="address-level1"><input class="in" id="mKab" placeholder="Kota / Kabupaten" autocomplete="address-level2"><input class="in" id="mKec" placeholder="Kecamatan"><input class="in" id="mKel" placeholder="Kelurahan / Desa (opsional)"></div>
    <button type="button" class="lnk" id="manToggle">Daftar wilayah tidak muncul? Isi manual</button>
    <div class="fg"><label for="oKodePos">Kode pos</label><input class="in" id="oKodePos" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digit, contoh: 15810"></div>
    <div class="fg"><label for="oJalan">Nama jalan, gedung, no. rumah</label><input class="in" id="oJalan" autocomplete="address-line1" placeholder="Contoh: Kp. Binong RT 01/02 No. 5"></div>
    <div class="fg"><label for="oDetail">Detail lainnya (opsional)</label><input class="in" id="oDetail" placeholder="Blok / unit / patokan"></div>
-   
    <div class="fg"><label for="oCatatan">Catatan (opsional)</label><input class="in" id="oCatatan" placeholder="Contoh: kirim sebelum hari Sabtu"></div>
    <div class="fg"><span class="fl">Metode pembayaran</span>
     <div class="chips" id="payOpts"><button type="button" class="chip" data-p="Transfer Bank">Transfer Bank</button><button type="button" class="chip" data-p="QRIS">QRIS</button><button type="button" class="chip" data-p="E-Wallet">E-Wallet</button><button type="button" class="chip" data-p="COD">COD</button></div>
-    <small id="payNote"></small></div>
+    <small id="payNote"></small>
+   </div>
    <div class="err" id="ofErr"></div>
   </div>
  </div>
- <div class="df"><div class="tot"><span>Total</span><b id="total">Rp 0</b></div><button class="btn" id="checkout">Checkout via WhatsApp</button></div>
+ <div class="df">
+  <div class="sumrow"><span>Subtotal</span><b id="subtotal">Rp 0</b></div>
+  <div class="sumrow disc" id="discRow" hidden><span>Diskon</span><b id="discount">−Rp 0</b></div>
+  <div class="tot"><span>Total</span><b id="total">Rp 0</b></div>
+  <button class="btn primary" id="checkout" disabled>Checkout via WhatsApp</button>
+  <small class="df-note">Harga sudah termasuk diskon. Ongkir dikonfirmasi admin.</small>
+ </div>
 </aside>
+
 <div class="pk" id="pk" role="dialog" aria-modal="true" aria-label="Pilih lokasi">
- <div class="pkh"><button class="ib" id="pkBack" aria-label="Kembali"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><input class="in" id="pkQ" type="search" placeholder="Cari provinsi, kota, kecamatan..." autocomplete="off"></div>
+ <div class="pkh"><button class="ib" id="pkBack" aria-label="Kembali"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><input class="in" id="pkQ" type="search" placeholder="Cari provinsi, kota, kecamatan..." autocomplete="off"></div>
  <div class="pks" id="pkSteps"></div>
  <div class="pkl" id="pkList"></div>
 </div>
+
 <div class="toast" id="toast" role="status"></div>
+<button class="top" id="top" aria-label="Kembali ke atas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-<script>
-const WA='6285703090174'; // nomor WhatsApp toko (format 62...)
-const SIZES=['S','M','L','XL','XXL'];
-const CHEST={S:'52 x 69',M:'55 x 71',L:'58 x 73',XL:'61 x 75',XXL:'64 x 77'};
-const P=[
-{id:1,club:'Manchester United',liga:'Liga Inggris',season:'2025/26',type:'Home',price:389000,grade:'Grade Ori',c1:'#c8102e',c2:'#111',tx:'#fff',pat:'solid',num:7,sz:SIZES},
-{id:2,club:'Liverpool',liga:'Liga Inggris',season:'2025/26',type:'Home',price:379000,grade:'Grade Ori',c1:'#d00027',c2:'#a30019',tx:'#fff',pat:'solid',num:11,sz:['S','M','L','XL']},
-{id:3,club:'Arsenal',liga:'Liga Inggris',season:'2025/26',type:'Home',price:459000,grade:'Player Issue',c1:'#f2e9c8',c2:'#1d2a4d',tx:'#1d2a4d',pat:'solid',num:7,sz:SIZES},
-{id:4,club:'Chelsea',liga:'Liga Inggris',season:'2026/27',type:'Home',price:329000,grade:'Grade Ori',c1:'#1a1a1a',c2:'#3d5af1',tx:'#fff',pat:'half',num:10,sz:['M','L','XL','XXL']},
-{id:5,club:'Real Madrid',liga:'La Liga',season:'2025/26',type:'Home',price:549000,grade:'Player Issue',c1:'#f4f4f0',c2:'#d8c36a',tx:'#1b2a56',pat:'solid',num:5,sz:SIZES},
-{id:6,club:'Barcelona',liga:'La Liga',season:'2025/26',type:'Home',price:399000,grade:'Grade Ori',c1:'#14a086',c2:'#101a3c',tx:'#fff',pat:'solid',num:10,sz:['S','M','L','XL']},
-{id:7,club:'Juventus',liga:'Serie A',season:'2025/26',type:'Home',price:349000,grade:'Grade Ori',c1:'#f6f6f6',c2:'#111',tx:'#111',pat:'stripes',num:9,sz:SIZES},
-{id:8,club:'AC Milan',liga:'Serie A',season:'2025/26',type:'Home',price:339000,grade:'Grade Ori',c1:'#d6001c',c2:'#111',tx:'#fff',pat:'stripes',num:10,sz:['S','M','L','XL','XXL']},
-{id:9,club:'Inter Milan',liga:'Serie A',season:'2026/27',type:'Home',price:429000,grade:'Player Issue',c1:'#ece8d8',c2:'#1b2b6b',tx:'#1b2b6b',pat:'hoops',num:9,sz:['M','L','XL']},
-{id:10,club:'Persija Jakarta',liga:'Liga Indonesia',season:'2025/26',type:'Home',price:289000,grade:'Grade Ori',c1:'#e8541c',c2:'#7a2308',tx:'#fff',pat:'solid',num:10,sz:SIZES},
-{id:11,club:'Persib Bandung',liga:'Liga Indonesia',season:'2025/26',type:'Home',price:299000,grade:'Grade Ori',c1:'#1c3fa8',c2:'#0d1f5c',tx:'#fff',pat:'solid',num:12,sz:SIZES},
-{id:12,club:'Timnas Indonesia',liga:'Timnas',season:'2026',type:'Home',price:469000,grade:'Player Issue',c1:'#c8102e',c2:'#8a0b20',tx:'#fff',pat:'solid',num:10,sz:SIZES},
-{id:13,club:'Bayern Munich',liga:'Liga Jerman',season:'2025/26',type:'Home',price:459000,grade:'Grade Ori',c1:'#d4021d',c2:'#0a2a66',tx:'#fff',pat:'solid',num:9,sz:SIZES},
-{id:14,club:'Borussia Dortmund',liga:'Liga Jerman',season:'2025/26',type:'Home',price:409000,grade:'Grade Ori',c1:'#fde100',c2:'#111',tx:'#111',pat:'solid',num:10,sz:SIZES},
-{id:15,club:'Manchester City',liga:'Liga Inggris',season:'2025/26',type:'Home',price:449000,grade:'Player Issue',c1:'#6cabdd',c2:'#1c2c5b',tx:'#1c2c5b',pat:'solid',num:9,sz:SIZES},
-{id:16,club:'Atletico Madrid',liga:'La Liga',season:'2025/26',type:'Home',price:359000,grade:'Grade Ori',c1:'#f6f6f6',c2:'#c8102e',tx:'#1b2a56',pat:'stripes',num:7,sz:SIZES},
-{id:17,club:'Paris Saint-Germain',liga:'Liga Prancis',season:'2025/26',type:'Home',price:429000,grade:'Grade Ori',c1:'#0a1f4d',c2:'#da291c',tx:'#fff',pat:'solid',num:7,sz:SIZES},
-{id:18,club:'Arema FC',liga:'Liga Indonesia',season:'2025/26',type:'Home',price:289000,grade:'Grade Ori',c1:'#1a3a9e',c2:'#f39200',tx:'#fff',pat:'solid',num:10,sz:SIZES},
-{id:19,club:'Persebaya Surabaya',liga:'Liga Indonesia',season:'2025/26',type:'Home',price:289000,grade:'Grade Ori',c1:'#1f8a3a',c2:'#0d3d1c',tx:'#fff',pat:'solid',num:10,sz:SIZES}
-];
-const LIGAS=['Liga Inggris','La Liga','Serie A','Liga Jerman','Liga Prancis','Liga Indonesia','Timnas'];
-const $=s=>document.querySelector(s);
-const rp=n=>'Rp '+n.toLocaleString('id-ID');
-let uid=0;
-
-/* gambar jersey (placeholder SVG) */
-/* Foto jersey asli (tertanam, 1 foto per produk) */
-const IMG={1:'images/1.jpg',2:'images/2.jpg',3:'images/3.jpg',4:'images/4.jpg',5:'images/5.jpg',6:'images/6.jpg',7:'images/7.jpg',8:'images/8.jpg',9:'images/9.jpg',10:'images/10.jpg',11:'images/11.jpg',12:'images/12.jpg',13:'images/13.jpg',14:'images/14.jpg',15:'images/15.jpg',16:'images/16.jpg',17:'images/17.jpg',18:'images/18.jpg',19:'images/19.jpg'};
-function blobURL(d){const b=atob(d.split(',')[1]),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return URL.createObjectURL(new Blob([u],{type:'image/jpeg'}))}
-P.forEach(p=>{try{p.img=IMG[p.id]?[blobURL(IMG[p.id])]:[]}catch(e){p.img=IMG[p.id]?[IMG[p.id]]:[]}});
-function jersey(p,view=0){const src=p.img[view]||p.img[0];return src?`<img class="ph" src="${src}" alt="Jersey ${p.club} ${p.type}" loading="lazy" onerror="fb(this,${p.id},${view})">`:jerseySVG(p,view)}
-function fb(el,id,v){el.outerHTML=jerseySVG(P.find(x=>x.id===id),v)}
-function jerseySVG(p,view=0){
- const i='c'+(uid++),B='M70 20L40 32 8 78l28 16 14-14v125q50 9 100 0V80l14 14 28-16-32-46-30-12q-30 24-60 0z';
- let pat='';
- if(p.pat==='stripes')for(let x=50;x<150;x+=24)pat+=`<rect x="${x}" y="0" width="12" height="230" fill="${p.c2}"/>`;
- if(p.pat==='hoops')for(let y=40;y<220;y+=28)pat+=`<rect x="0" y="${y}" width="200" height="14" fill="${p.c2}"/>`;
- if(p.pat==='half')pat=`<rect x="100" y="0" width="100" height="230" fill="${p.c2}"/>`;
- const sl=p.pat==='solid'?'':`<rect x="0" y="0" width="50" height="100" fill="${p.c2}"/><rect x="150" y="0" width="50" height="100" fill="${p.c2}"/>`;
- const sl2=p.pat==='solid'?`<path d="M40 32L8 78l28 16 14-14zM160 32l32 46-28 16-14-14z" fill="${p.c2}" opacity=".55"/>`:sl;
- let txt;
- if(view===1)txt=`<text x="100" y="82" text-anchor="middle" font-family="Bebas Neue,Impact,sans-serif" font-size="16" fill="${p.tx}" letter-spacing="2">JERZI</text><text x="100" y="170" text-anchor="middle" font-family="Bebas Neue,Impact,sans-serif" font-size="96" fill="${p.tx}">${p.num}</text>`;
- else if(view===2)txt=`<g fill="${p.tx}" opacity=".35">${Array.from({length:11},(_,r)=>Array.from({length:9},(_,c)=>`<circle cx="${62+c*9}" cy="${100+r*9}" r="1.6"/>`).join('')).join('')}</g><text x="100" y="205" text-anchor="middle" font-family="Barlow,sans-serif" font-weight="600" font-size="9" fill="${p.tx}">${p.grade.toUpperCase()}</text>`;
- else txt=`<circle cx="74" cy="76" r="9" fill="none" stroke="${p.tx}" stroke-width="2" opacity=".85"/><text x="100" y="150" text-anchor="middle" font-family="Bebas Neue,Impact,sans-serif" font-size="22" fill="${p.tx}" opacity=".9" letter-spacing="2">JERZI</text>`;
- return `<svg viewBox="0 0 200 230" role="img" aria-label="Jersey ${p.club} ${p.type}"><defs><clipPath id="${i}"><path d="${B}"/></clipPath></defs><g clip-path="url(#${i})"><rect width="200" height="230" fill="${p.c1}"/>${pat}${sl2}</g><path d="M70 20q30 24 60 0" fill="none" stroke="${p.c2==='#111'?p.tx:p.c2}" stroke-width="5"/><path d="${B}" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1.5"/>${txt}</svg>`;
-}
-
-/* state */
-let cart=[],F={q:'',club:'',liga:'',size:'',price:'0'},cur=null,curSize='',curQty=1;
-
-/* hero */
-(function(){const h=P[11];$('#heroJ').innerHTML=jersey(h);$('#heroName').textContent=h.club+' '+h.type;$('#heroPrice').textContent=rp(h.price);})();
-
-/* kategori + filter UI */
-$('#cats').innerHTML=LIGAS.map(l=>`<button class="cat" data-l="${l}"><strong>${l}</strong><span>${P.filter(p=>p.liga===l).length} jersey</span></button>`).join('');
-$('#fClub').innerHTML='<option value="">Semua klub</option>'+P.map(p=>p.club).sort().map(c=>`<option>${c}</option>`).join('');
-$('#fLiga').innerHTML='<option value="">Semua liga</option>'+LIGAS.map(l=>`<option>${l}</option>`).join('');
-$('#fSize').innerHTML=SIZES.map(s=>`<button class="chip" data-s="${s}">${s}</button>`).join('');
-
-function inRange(p,r){return r==='0'||(r==='1'&&p.price<350000)||(r==='2'&&p.price>=350000&&p.price<=450000)||(r==='3'&&p.price>450000)}
-function render(){
- const q=F.q.toLowerCase().trim();
- const list=P.filter(p=>(!q||(p.club+' '+p.liga+' '+p.type+' '+p.season+' '+p.grade).toLowerCase().includes(q))&&(!F.club||p.club===F.club)&&(!F.liga||p.liga===F.liga)&&(!F.size||p.sz.includes(F.size))&&inRange(p,F.price));
- $('#resCount').textContent=list.length+' jersey ditemukan';
- $('#grid').innerHTML=list.length?list.map(p=>`<article class="card"><div class="pic" data-open="${p.id}"><span class="lab ${p.type}">${p.type}</span>${jersey(p)}</div><div class="info"><h3 data-open="${p.id}">${p.club}</h3><small>Musim ${p.season} · ${p.grade}</small><div class="price">${rp(p.price)}</div><button class="btn" data-add="${p.id}">Tambah ke Keranjang</button></div></article>`).join(''):'<div class="empty"><h3 style="font-size:32px">Jersey tidak ketemu</h3><p>Coba ganti kata kunci atau reset filter.</p></div>';
- document.querySelectorAll('.cat').forEach(c=>c.classList.toggle('on',c.dataset.l===F.liga));
- document.querySelectorAll('#fSize .chip').forEach(c=>c.classList.toggle('on',c.dataset.s===F.size));
- observe();
-}
-let io;function observe(){io&&io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-v');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.card').forEach((c,i)=>{c.style.transitionDelay=(i%4)*60+'ms';io.observe(c)})}
-
-$('#q').oninput=e=>{F.q=e.target.value;render()};
-$('#fClub').onchange=e=>{F.club=e.target.value;render()};
-$('#fLiga').onchange=e=>{F.liga=e.target.value;render()};
-$('#fPrice').onchange=e=>{F.price=e.target.value;render()};
-$('#fSize').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;F.size=F.size===b.dataset.s?'':b.dataset.s;render()};
-$('#reset').onclick=()=>{F={q:'',club:'',liga:'',size:'',price:'0'};$('#q').value='';$('#fClub').value='';$('#fLiga').value='';$('#fPrice').value='0';render()};
-$('#cats').onclick=e=>{const b=e.target.closest('.cat');if(!b)return;F.liga=F.liga===b.dataset.l?'':b.dataset.l;$('#fLiga').value=F.liga;render();if(F.liga)$('#katalog').scrollIntoView()};
-$('#grid').onclick=e=>{
- const o=e.target.closest('[data-open]'),a=e.target.closest('[data-add]');
- if(a){const p=P.find(x=>x.id==a.dataset.add);if(F.size&&p.sz.includes(F.size)){addToCart(p,F.size,1)}else{openModal(p.id,'',true)}}
- else if(o)openModal(+o.dataset.open);
-};
-
-/* menu */
-$('#burger').onclick=()=>{const m=$('#menu');const o=m.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
-$('#menu').onclick=e=>{if(e.target.tagName==='A')$('#menu').classList.remove('open')};
-
-/* modal */
-function openModal(id,size='',needSize=false){
- cur=P.find(p=>p.id===id);curSize=size;curQty=1;
- const p=cur;
- $('#modal').innerHTML=`<button class="ib mx" id="mClose" aria-label="Tutup"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="mbody"><div><div class="main" id="mMain">${jersey(p,0)}</div><div class="thumbs"${p.img.length===1?' hidden':''}>${Array.from({length:p.img.length||3},(_,v)=>`<button class="th ${v?'':'on'}" data-v="${v}" aria-label="Foto ${v+1}">${jersey(p,v)}</button>`).join('')}</div></div>
- <div class="mi"><span class="lab ${p.type}" style="position:static;display:inline-block">${p.type}</span><h2>${p.club}</h2><small style="color:var(--mute)">Musim ${p.season} · ${p.grade}</small><div class="price">${rp(p.price)}</div>
- <p>${p.grade==='Player Issue'?'Bahan Player Issue: kain ultra-ringan dengan zona ventilasi, potongan slim fit seperti yang dipakai pemain di lapangan.':'Bahan Grade Ori: poliester dry-fit lembut, menyerap keringat, potongan regular yang nyaman untuk nobar dan harian.'} Bordir pada logo dan jahitan rapat.</p>
- <span class="fl">Pilih ukuran</span><div class="chips" id="mSizes" style="margin:6px 0 4px">${SIZES.map(s=>`<button class="chip ${s===size?'on':''}" data-s="${s}" ${p.sz.includes(s)?'':'disabled'}>${s}</button>`).join('')}</div><div class="err" id="mErr">${needSize?'Pilih ukuran dulu sebelum menambah ke keranjang.':''}</div>
- <table><tr><th>Ukuran</th>${SIZES.map(s=>`<th>${s}</th>`).join('')}</tr><tr><td>Dada x Panjang (cm)</td>${SIZES.map(s=>`<td>${CHEST[s]}</td>`).join('')}</tr></table>
- <div class="qrow"><div class="qty"><button id="mm" aria-label="Kurangi">−</button><span id="mq">1</span><button id="mp" aria-label="Tambah">+</button></div><button class="btn" id="mAdd" style="flex:1">Tambah ke Keranjang</button></div></div></div>`;
- show('#modal');
-}
-$('#modal').onclick=e=>{
- const t=e.target;
- if(t.closest('#mClose'))return hide();
- const th=t.closest('.th');if(th){document.querySelectorAll('.thumbs .th').forEach(x=>x.classList.remove('on'));th.classList.add('on');$('#mMain').innerHTML=jersey(cur,+th.dataset.v)}
- const ch=t.closest('#mSizes .chip');if(ch&&!ch.disabled){curSize=ch.dataset.s;document.querySelectorAll('#mSizes .chip').forEach(x=>x.classList.toggle('on',x===ch));$('#mErr').textContent=''}
- if(t.id==='mm'){curQty=Math.max(1,curQty-1);$('#mq').textContent=curQty}
- if(t.id==='mp'){curQty=Math.min(20,curQty+1);$('#mq').textContent=curQty}
- if(t.id==='mAdd'){if(!curSize){$('#mErr').textContent='Pilih ukuran dulu sebelum menambah ke keranjang.';return}addToCart(cur,curSize,curQty);hide();}
-};
-
-/* keranjang */
-function addToCart(p,size,qty){
- const key=p.id+'-'+size,it=cart.find(c=>c.key===key);
- it?it.qty=Math.min(20,it.qty+qty):cart.push({key,id:p.id,size,qty});
- renderCart();toast(`${p.club} ${p.type} (${size}) masuk keranjang`);
- const c=$('#cnt');c.classList.add('pop');setTimeout(()=>c.classList.remove('pop'),250);
-}
-function renderCart(){
- const n=cart.reduce((a,c)=>a+c.qty,0);$('#cnt').textContent=n;
- const tot=cart.reduce((a,c)=>a+c.qty*P.find(p=>p.id===c.id).price,0);$('#total').textContent=rp(tot);
- $('#ofm').hidden=!n;$('#checkout').disabled=!n;$('#checkout').style.opacity=n?1:.4;
- $('#items').innerHTML=n?cart.map(c=>{const p=P.find(x=>x.id===c.id);return `<div class="it"><div class="th">${jersey(p)}</div><div><b>${p.club} ${p.type}</b><small>Ukuran ${c.size} · ${rp(p.price)}</small><div class="qrow" style="margin-top:6px"><div class="qty"><button data-d="-1" data-k="${c.key}" aria-label="Kurangi">−</button><span>${c.qty}</span><button data-d="1" data-k="${c.key}" aria-label="Tambah">+</button></div></div></div><button class="rm" data-rm="${c.key}">Hapus</button></div>`}).join(''):'<div class="empty"><h3 style="font-size:30px">Keranjang kosong</h3><p>Pilih jersey dari katalog untuk mulai belanja.</p></div>';
-}
-$('#items').onclick=e=>{
- const d=e.target.closest('[data-d]'),r=e.target.closest('[data-rm]');
- if(d){const c=cart.find(x=>x.key===d.dataset.k);c.qty+=+d.dataset.d;if(c.qty<1)cart=cart.filter(x=>x!==c);else if(c.qty>20)c.qty=20}
- if(r)cart=cart.filter(x=>x.key!==r.dataset.rm);
- renderCart();
-};
-/* Sumber data wilayah: dicoba berurutan, otomatis pindah ke cadangan kalau satu gagal.
-   Paling stabil: fork repo emsifa/api-wilayah-indonesia, aktifkan GitHub Pages, lalu taruh alamatmu di urutan pertama. */
-const WILS=[
-  'https://api.datawilayah.com/',
-  'https://emsifa.github.io/api-wilayah-indonesia/api/',
-  'https://cdn.jsdelivr.net/gh/emsifa/api-wilayah-indonesia@gh-pages/api/'
-],WC={};
-let wi=0;
-async function wget(p){
-  if(WC[p])return WC[p];
-  // api.datawilayah.com punya endpoint berbeda
-  if(wi===0){
-    try{
-      const ep=p==='provinces'?'provinces':
-        p.startsWith('regencies/')?'regencies?province_code='+p.split('/')[1]:
-        p.startsWith('districts/')?'districts?regency_code='+p.split('/')[1]:
-        'villages?district_code='+p.split('/')[1];
-      const c=new AbortController(),t=setTimeout(()=>c.abort(),6000);
-      const r=await fetch('https://api.datawilayah.com/'+ep,{signal:c.signal,mode:'cors'});
-      clearTimeout(t);
-      if(r.ok){const j=await r.json();const d=j.data||j;if(Array.isArray(d)&&d.length){
-        // normalize ke format {id,name}
-        const norm=d.map(x=>({id:String(x.code||x.id),name:x.name||x.nama}));
-        return WC[p]=norm;
-      }}
-    }catch(e){}
-    wi=1;
-  }
-  for(let k=1;k<WILS.length;k++){
-    const j=(wi-1+k)%(WILS.length-1)+1;
-    try{
-      const c=new AbortController(),t=setTimeout(()=>c.abort(),8000);
-      const r=await fetch(WILS[j]+p+'.json',{signal:c.signal,mode:'cors'});
-      clearTimeout(t);
-      if(!r.ok)continue;
-      const d=await r.json();
-      if(Array.isArray(d)&&d.length){wi=j;return WC[p]=d}
-    }catch(e){}
-  }
-  throw 0;
-}
-const tc=t=>t.toLowerCase().replace(/(^|[\s\-\/(])([a-z])/g,(m,a,b)=>a+b.toUpperCase());
-const LVL=['Provinsi','Kota/Kabupaten','Kecamatan','Kelurahan/Desa'];
-let sel=[],lvl=0,pkData=[],place=null;
-function pkPath(){return lvl===0?'provinces':lvl===1?`regencies/${sel[0].id}`:lvl===2?`districts/${sel[1].id}`:`villages/${sel[2].id}`}
-function pkSteps(){$('#pkSteps').innerHTML=sel.map((x,i)=>`<button class="pkd" data-i="${i}">${tc(x.name)}</button>`).join('')+`<div class="pkd cur">Pilih ${LVL[lvl]}</div>`}
-function pkRender(){const q=$('#pkQ').value.toLowerCase().trim(),l=pkData.filter(x=>!q||x.name.toLowerCase().includes(q));$('#pkList').innerHTML=l.length?l.map(x=>`<button class="pki" data-id="${x.id}">${tc(x.name)}</button>`).join(''):'<div class="empty">Tidak ditemukan.</div>'}
-async function pkLoad(){
- $('#pkQ').value='';pkSteps();$('#pkList').innerHTML='<div class="empty">Memuat daftar...</div>';
- try{pkData=await wget(pkPath())}catch(e){$('#pkList').innerHTML='<div class="empty">Data wilayah gagal dimuat. Cek koneksi internet kamu.<br><button class="chip" id="pkRetry" style="margin-top:14px">Coba lagi</button> <button class="chip" id="pkManual" style="margin-top:14px">Isi manual</button></div>';return}
- pkRender();$('#pkList').scrollTop=0;
-}
-function pkClose(){$('#pk').classList.remove('open')}
-$('#oLokasi').onclick=()=>{sel=[];lvl=0;$('#pk').classList.add('open');pkLoad()};
-$('#pkBack').onclick=()=>{if(lvl>0){sel.pop();lvl--;pkLoad()}else pkClose()};
-$('#pkQ').oninput=pkRender;
-$('#pkSteps').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;const i=+b.dataset.i;sel=sel.slice(0,i);lvl=i;pkLoad()};
-$('#pkList').onclick=e=>{
- if(e.target.id==='pkRetry')return pkLoad();
- if(e.target.id==='pkManual'){pkClose();setManual(true);return}
- const b=e.target.closest('.pki');if(!b)return;
- const it=pkData.find(x=>x.id===b.dataset.id);sel[lvl]={id:it.id,name:it.name};
- if(lvl<3){lvl++;pkLoad()}else{
-  place={prov:sel[0].name,kab:sel[1].name,kec:sel[2].name,kel:sel[3].name};
-  const t=$('#locTxt');t.className='';t.textContent=[place.kel,place.kec,place.kab,place.prov].map(tc).join(', ');
-  $('#ofErr').textContent='';pkClose();
- }
-};
-function setManual(on){$('#manBox').hidden=!on;$('#locFg').hidden=on;$('#manToggle').textContent=on?'Pakai daftar wilayah':'Daftar wilayah tidak muncul? Isi manual';if(on)$('#mProv').focus()}
-$('#manToggle').onclick=()=>setManual($('#manBox').hidden);
-$('#oKodePos').oninput=e=>{e.target.value=e.target.value.replace(/\D/g,'')};
-let pay='';
-const PAYNOTE={'Transfer Bank':'Nomor rekening dikirim admin lewat WhatsApp setelah pesanan masuk.','QRIS':'Kode QRIS dikirim admin lewat WhatsApp setelah pesanan masuk.','E-Wallet':'Nomor e-wallet dikirim admin lewat WhatsApp setelah pesanan masuk.','COD':'Bayar ke kurir saat barang tiba. Ketersediaan COD dikonfirmasi admin.'};
-$('#payOpts').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;pay=b.dataset.p;document.querySelectorAll('#payOpts .chip').forEach(x=>x.classList.toggle('on',x===b));$('#payNote').textContent=PAYNOTE[pay];$('#ofErr').textContent=''};
-$('#checkout').onclick=()=>{
- if(!cart.length)return;
- const v=id=>$(id).value.trim(),nm=v('#oNama'),tp=v('#oTelp').replace(/[\s.\-()]/g,''),kp=v('#oKodePos'),jl=v('#oJalan'),dt=v('#oDetail'),ct=v('#oCatatan');
- let el='',msg='';
- const man=!$('#manBox').hidden,pl=man?{prov:v('#mProv'),kab:v('#mKab'),kec:v('#mKec'),kel:v('#mKel')}:place;
- if(!nm){el='#oNama';msg='Isi nama lengkap dulu.'}
- else if(!/^(\+62|62|0)8\d{7,12}$/.test(tp)){el='#oTelp';msg='Nomor telepon belum valid (contoh: 08123456789).'}
- else if(!pl||!pl.prov||!pl.kab||!pl.kec){el=man?'#mProv':'#oLokasi';msg=man?'Isi provinsi, kota/kabupaten, dan kecamatan dulu.':'Pilih provinsi, kota, kecamatan, dan kelurahan dulu.'}
- else if(!/^\d{5}$/.test(kp)){el='#oKodePos';msg='Kode pos harus 5 digit angka.'}
- else if(!jl){el='#oJalan';msg='Isi nama jalan, gedung, atau no. rumah.'}
- else if(!pay){el='#payOpts';msg='Pilih metode pembayaran dulu.'}
- if(msg){$('#ofErr').textContent=msg;$(el).scrollIntoView({block:'center'});if($(el).focus&&el!=='#payOpts')$(el).focus();return}
- let t=0,m='Halo JERZI, saya mau pesan:\n\n';
- cart.forEach((c,i)=>{const p=P.find(x=>x.id===c.id),s=p.price*c.qty;t+=s;m+=`${i+1}. ${p.club} ${p.type} ${p.season} (${p.grade})\n   Ukuran ${c.size} x ${c.qty} = ${rp(s)}\n`});
- m+=`\nTotal: ${rp(t)}\n\n*Data Pemesan*\nNama: ${nm}\nNo. Telepon: ${tp}\nAlamat: ${jl}${dt?', '+dt:''}\n${pl.kel?'Kelurahan/Desa: '+tc(pl.kel)+'\n':''}Kecamatan: ${tc(pl.kec)}\nKota/Kab: ${tc(pl.kab)}\nProvinsi: ${tc(pl.prov)}\nKode Pos: ${kp}\n`;
- if(ct)m+=`Catatan: ${ct}\n`;
- m+=`\n*Metode Pembayaran*: ${pay}\n\nTerima kasih!`;
- window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,'_blank');
-};
-$('#cartBtn').onclick=()=>show('#drawer');
-$('#closeCart').onclick=hide;
-
-/* overlay */
-let openEl=null;
-function show(s){hide(true);openEl=$(s);openEl.classList.add('open');$('#ov').classList.add('open');document.body.style.overflow='hidden'}
-function hide(keep){if(openEl)openEl.classList.remove('open');openEl=null;if(!keep){$('#ov').classList.remove('open');document.body.style.overflow=''}}
-$('#ov').onclick=()=>hide();
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#pk').classList.contains('open'))pkClose();else hide()}});
-let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200)}
-
-render();renderCart();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
